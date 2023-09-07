@@ -3,7 +3,7 @@ import Post from '../../models/post'
 
 const router = Router()
 
-router.post('/api/show/post/:id', async (req: Request, res: Response, next: NextFunction) => {
+router.get('/api/show/post/:id', async (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params;
 
     if (!id) {

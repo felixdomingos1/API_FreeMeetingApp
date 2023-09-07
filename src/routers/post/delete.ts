@@ -3,7 +3,7 @@ import Post from '../../models/post'
 
 const router = Router()
 
-router.post('/api/delete/post/:id', async (req: Request, res: Response, next: NextFunction) => {
+router.delete('/api/delete/post/:id', async (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params;
 
     if(!id) {

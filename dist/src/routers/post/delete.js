@@ -17,7 +17,7 @@ const express_1 = require("express");
 const post_1 = __importDefault(require("../../models/post"));
 const router = (0, express_1.Router)();
 exports.deletePostRouter = router;
-router.post('/api/delete/post/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+router.delete('/api/delete/post/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     if (!id) {
         const error = new Error('post id is required');

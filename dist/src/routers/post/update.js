@@ -17,7 +17,7 @@ const express_1 = require("express");
 const post_1 = __importDefault(require("../../models/post"));
 const router = (0, express_1.Router)();
 exports.updatePostRouter = router;
-router.post('/api/update/post/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+router.put('/api/update/post/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, content } = req.body;
     const { id } = req.params;
     if (!title || !content || !id) {
