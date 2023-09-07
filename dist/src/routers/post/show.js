@@ -19,6 +19,12 @@ const router = (0, express_1.Router)();
 exports.showPostRouter = router;
 router.post('/api/show/post/:id', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const result = id ? yield post_1.default.findById(id) : yield post_1.default.find();
-    res.status(201).send(result);
+    if (!id) {
+        const allPosts = yield post_1.default.find();
+        res.status(200).send(allPosts);
+    }
+    const post = yield post_1.default.findOne({ _id: id }).populate('comments');
+    res.status(200).send(post);
+    // const result = id ? await Post.findById(id) : await Post.find()
+    // res.status(201).send(result)
 }));

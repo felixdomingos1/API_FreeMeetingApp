@@ -4,12 +4,12 @@ import Post from '../../models/post'
 
 const router = Router()
 
-router.post('/api/:postId/new/comment/', async (req: Request, res: Response, next: NextFunction) => {
+router.post('/api/comment/new/:postId', async (req: Request, res: Response, next: NextFunction) => {
     const { userName, content  } = req.body;
 
     const { postId } = req.params;
 
-    if(!content || postId) {
+    if(!content) {
         const error = new Error('content and postId are required!') as CustomError 
         error.status = 400
         next(error)

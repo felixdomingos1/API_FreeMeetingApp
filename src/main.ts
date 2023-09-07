@@ -58,8 +58,9 @@ const start = async () =>{
   
   try {
     await mongoose.connect(process.env.Mongo_URI)
-  } catch (error) {
-      throw new Error("Error in your App");
+  } catch (err) {
+    console.log(err);
+    
   }
   app.listen(8080, () => console.log('My Api is runnig on port 8080')) 
 }
