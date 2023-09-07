@@ -18,7 +18,7 @@ const comment_1 = __importDefault(require("../../models/comment"));
 const post_1 = __importDefault(require("../../models/post"));
 const router = (0, express_1.Router)();
 exports.deleteCommentRouter = router;
-router.delete('/api/:postId/delete/comment/:commentId', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+router.post('/api/:postId/delete/comment/:commentId', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { postId, commentId } = req.params;
     if (!postId || !commentId)
         throw new Error('commentId is required!');

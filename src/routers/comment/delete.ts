@@ -4,7 +4,7 @@ import Post from '../../models/post'
 
 const router = Router()
 
-router.post('/api/:postId/delete/comment/:commentId', async (req: Request, res: Response, next: NextFunction) => {
+router.delete('/api/:postId/delete/comment/:commentId', async (req: Request, res: Response, next: NextFunction) => {
     const { postId, commentId } = req.params;
 
     if(!postId || !commentId) throw new Error('commentId is required!');

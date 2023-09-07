@@ -11,8 +11,7 @@ import {
   updatePostRouter,
   showPostRouter,
   deleteCommentRouter,
-  newCommentRouter
-
+  newCommentRouter,
  } from "./routers";
 
 const app = express()
