@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config();
+
 import { json, urlencoded } from "body-parser";
 import express from "express";
 import mongoose from "mongoose";
@@ -8,6 +11,11 @@ app.use(urlencoded({
 }))
 app.use(json())
 
+declare global{
+  interface CustomError extends Error{
+    status?:number
+  }
+}
 const start = async () =>{
   if (!process.env.Mongo_URI) throw new Error('Mongo_URI is require')
   
