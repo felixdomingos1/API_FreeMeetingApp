@@ -4,12 +4,41 @@ dotenv.config();
 import { json, urlencoded } from "body-parser";
 import express, {Request, Response, NextFunction} from "express";
 import mongoose from "mongoose";
-const app = express()
+import  cors  from "cors";
+import { 
+  newPostRouter,
+  deletePostRouter,
+  updatePostRouter,
+  showPostRouter,
+  deleteCommentRouter,
+  newCommentRouter
 
+ } from "./routers";
+
+const app = express()
+app.use(cors({
+  origin:'*',
+  optionsSuccessStatus: 200
+}))
 app.use(urlencoded({
    extended: true
 }))
 app.use(json())
+
+app.use(newPostRouter)
+app.use(showPostRouter)
+app.use(updatePostRouter)
+app.use(deletePostRouter)
+
+app.use(newCommentRouter)
+app.use(deleteCommentRouter)
+
+app.all('*', (req, res, next) =>{
+  const error = new Error("Not found") as CustomError
+  error.status = 404
+  next(error)
+  
+})
 
 declare global{
   interface CustomError extends Error{
@@ -30,8 +59,8 @@ const start = async () =>{
   try {
     await mongoose.connect(process.env.Mongo_URI)
   } catch (error) {
-      throw new Error("Error in yout App");
+      throw new Error("Error in your App");
   }
-  app.listen(8080, () => console.log('My Api is runnig 0n p0rt 8080')) 
+  app.listen(8080, () => console.log('My Api is runnig on port 8080')) 
 }
 start()
