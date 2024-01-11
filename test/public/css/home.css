@@ -1,0 +1,349 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+main {
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 8rem;
+}
+
+header{
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 10px 2px 3px rgba(0,0,0,0.360);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 25px 0;
+}  
+.Logo{
+    font-size: 30px;
+    font-weight: 600;
+    color: #9d63d3;
+    background: transparent;
+}
+.Logo strong{
+    background: transparent;
+    color: #f5ae50;
+}
+.ulHeader{
+    display: flex;
+    background: transparent;
+}
+.ulHeader li{
+    background: transparent;
+    margin: 0 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+}
+.ulHeader li:hover{
+    color: #9d63d3;
+    background: #f5c688;
+}
+li.active{
+    color: #9d63d3;
+    background: #f5c688;
+}
+.singInOut {
+    background: #fff;
+}
+nav form .logoutBtn{
+    background: #ff4524;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ffffff;
+    outline: none;
+    border-radius: 6px;
+    padding: 5px;
+    border: none;
+}
+main #publicReceitas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    width: 74%;
+    margin-bottom: 1rem;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    background: #fff;
+}
+main #publicReceitas input{
+    height: 3rem;
+    width: 70%;
+    padding: 4px;
+    border-radius: 10px;
+    outline: none;
+    border:1px solid #f5ae50;
+    background: #faf4f4;
+    font-size: 16px;
+}
+#publicReceitas button{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 20px 5px;
+    width: 25%;
+    height: 4rem;
+    background: #f5ae50;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ffffff;
+}
+.containerReceitas{
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 17px;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .user-rating {
+    margin-top: 10px;
+  }
+  
+  .user-rating input[type="radio"] {
+    display: none;
+  }
+  
+  .user-rating label {
+    font-size: 20px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .user-rating label:hover ,
+.user-rating  label:hover ~ label
+{
+    color: #f90;
+}
+  
+  .user-rating input[type="radio"]:checked ~ label {
+    color: #f90;
+  }
+.user-datas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+.user-datas .imgUser{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5ae50;
+    font-weight: 550;
+    color: #9d63d3;
+    margin-right: 5px;
+}
+.user-datas .imgUser img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.user-datas .userName{
+    color: #9d63d3;
+}
+footer{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    background: #f5ae50;
+    padding: 1rem 0;
+    bottom: 0;
+}
+
+/* Login and SignUp Styles start here  */
+.bodyContent {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+.container {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .container form h2{
+    background: #fff;
+  }
+  input, button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #f5ae50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #eba242;
+    background-color: #da8920;
+  }
+
+  /* Modal start here */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.76);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 500px;
+    height: 400px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Responsivo */
+  @media screen and (max-width: 600px) {
+    .modal-content {
+      width: 80%;
+    }
+  }
+.headerInit{
+  /* position: fixed; */
+  width: 100%;
+}
+  .initialHome{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    margin-top: 10rem;
+    width: 100%;
+  }
+  .NotifyContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 9rem;
+  }
+  .Notifyheader{
+    top: 0;
+  }
+  .contentNotify{
+    background: #fff;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.360);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px;
+  }
+  .contentNotify .HotifyHeader{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+  }
+  .contentNotify .HotifyHeader .userImgNotify{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #da8920;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  .contentNotify .HotifyHeader .userImgNotify img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .contentNotify .HotifyHeader .userDataNotify{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contentNotify .HotifyHeader .userDataNotify p{
+    font-size: 12px;
+  }
